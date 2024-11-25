@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="icon" href="favicon_123.ico" type="image/x-icon"> -->
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+    <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung X-Ray classifier</title>
+</head>
+
+<body>
+    <h1>Upload an X-Ray image !</h1>
+    <form id="Form1" enctype="multipart/form-data">
+
+        <input type="file" id="fileInput" name="file" accept="image/*">
+        <button type="button" onclick="uploadImage()">SUBMIT</button>
+    </form>
+
+    <p id="result"></p>
+
+    <br>
+
+    <div id="imageDisplay" style="width: 448px; height: 448px; border: 3px solid black;">
+       
+
+    </div>
+
+    <script>
+        async function uploadImage(){
+            const fileInput = document.getElementById("fileInput").files[0];
+
+            const formData = new FormData();
+            formData.append('file', fileInput);
+
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/predict', {
+                    method: 'POST',
+                    body: formData // Assuming formData includes the image file
+                });
+
+                if (response.status === 400) {
+                    document.getElementById("result").innerText = 'Error: No file inputted';
+                } else if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById("result").innerText = `Prediction: ${data.prediction}`;
+                    const imageURL = URL.createObjectURL(fileInput);
+                    document.getElementById("imageDisplay").innerHTML = `<img src="${imageURL}" style="width: 100%; height: 100%;">`;
+                } else {
+                    document.getElementById("result").innerText = `Error: ${response.statusText}`;
+                }
+            } 
+            catch (error) {
+                document.getElementById("result").innerText = 'Error: Failed to connect to the server';
+            }
+            
+        }
+    </script>
+    
+</body>
+</html>
