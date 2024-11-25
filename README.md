@@ -16,6 +16,15 @@ This project is a work-in-progress web application designed to classify lung X-r
 - **Frontend**:
   - A basic React interface for submitting X-ray images and displaying the prediction results.
   - Currently under development with plans to expand its functionality.
+  
+### Model File
+
+The trained VGG16 model for this project is too large to be included in this repository. You can download the model from the following link:
+
+[Download the model from Google Drive](the link will be added soon)
+
+After downloading, place the model file in the `backend/models` directory.
+
 
 ### Planned Features
 - User authentication and role-based login for **doctors** and **patients**.
