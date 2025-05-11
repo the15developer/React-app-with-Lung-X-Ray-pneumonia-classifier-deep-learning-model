@@ -1,50 +1,61 @@
-# Lung X-Ray Pneumonia Classifier Web App
+# Lung X-Ray Pneumonia Classifier Web App - under development 
 
-This project is a work-in-progress web application designed to classify lung X-rays as either "Normal" or "Pneumonia" using a deep learning model. The application features a React-based frontend and a Flask backend. The long-term goal is to expand the application to support additional pulmonary illnesses and provide a robust platform for both doctors and patients.
+This project is a work-in-progress web application designed to classify lung X-rays as either "Normal" or "Pneumonia" and either "Normal" or "Covid-19" using 2 custom-trained deep learning models. The web application features a React-based frontend and a Flask backend, with MySQL database. The long-term goal is to expand the application to support additional pulmonary illnesses and provide a robust platform for both doctors and patients.
+
+
+![image](https://github.com/user-attachments/assets/e7ccff85-cb83-43c7-9846-39cde16a3522)
+
+![image](https://github.com/user-attachments/assets/dd54fcd5-24f1-4cc3-95ba-0a6d01fa4bce)
+
+![image](https://github.com/user-attachments/assets/62bd5735-4683-44e5-a57c-c85947881c0c)
+
+![image](https://github.com/user-attachments/assets/9f71e7b0-3e54-48a8-b038-0d53d283ae92)
+
+![image](https://github.com/user-attachments/assets/8c0c0b13-f5ee-4380-86d6-9df286bc0c6b)
+
+
 
 ## Project Overview
 
 ### Current Features
-- **Deep Learning Model**: 
-  - The model is based on VGG16 and was trained on a Kaggle child chest X-rays dataset containing normal and pneumonia samples.
+- **Deep Learning Models**: 
+  - The Pneumonia model is based on VGG16 and was trained on a Kaggle child chest X-rays dataset containing normal and pneumonia samples.
   - Achieved **93% test accuracy** after 30 epochs of training on Google Colab.
+  - The trained model is integrated into the Flask backend for making predictions.
+ 
+  - The Covid model is based on VGG16 and was trained on a Kaggle covid chest X-rays dataset containing normal and covid samples.
+  - Achieved **96% test accuracy** after 30 epochs of training on Google Colab.
   - The trained model is integrated into the Flask backend for making predictions.
   
 - **Backend**:
   - The Flask backend (`app.py`) defines an endpoint `/predict` that handles X-ray image submissions from the frontend, processes the image with the VGG16 model, and returns the classification result.
 
 - **Frontend**:
-  - A basic React interface for submitting X-ray images and displaying the prediction results.
+  - A React interface for submitting X-ray images and displaying the prediction results; dashboard based on user role.
   - Currently under development with plans to expand its functionality.
   
 ### Model File
 
-The trained VGG16 model for this project is too large to be included in this repository. You can download the model from the following link:
+The trained VGG16 models for this project are too large to be included in this repository. You can download the models from the following link:
 
 [Download the model from Google Drive](the link will be added soon)
 
 After downloading, place the model file in the `backend/models` directory.
 
 
-### Planned Features
+### Features
 - User authentication and role-based login for **doctors** and **patients**.
 - Individual dashboards and profiles for users.
 - Database integration for storing user information, medical records, and prediction history.
-- Support for additional models to classify X-rays for **COVID-19** and other pulmonary illnesses.
 - Enhanced frontend with an improved user experience and additional tools for medical professionals.
 
 ## Technology Stack
 - **Frontend**: React
 - **Backend**: Flask (Python)
+- **Database** : MySQL & SQLAlchemy
 - **Deep Learning Model**: VGG16 (Keras/TensorFlow)
 - **Model Training Environment**: Google Colab
-- **Dataset**: [Child Chest X-Rays Dataset from Kaggle](https://www.kaggle.com) (Normal and Pneumonia classes)
-
-## How It Works
-1. A user uploads a chest X-ray through the React frontend.
-2. The image is sent to the Flask backend (`/predict` endpoint).
-3. The backend processes the image with the VGG16 model and returns the classification result.
-4. The frontend displays the prediction result to the user.
+- **Messaging, chat functionality** : SocketIO
 
 ## Getting Started
 
