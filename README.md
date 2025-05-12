@@ -2,6 +2,11 @@
 
 This project is a work-in-progress web application designed to classify lung X-rays as either "Normal" or "Pneumonia" and either "Normal" or "Covid-19" using 2 custom-trained deep learning models. The web application features a React-based frontend and a Flask backend, with MySQL database. The long-term goal is to expand the application to support additional pulmonary illnesses and provide a robust platform for both doctors and patients.
 
+### Recently Added Features
+- 👤 User login and registration system.
+- 👨‍⚕️ Separate dashboards for doctors and patients, including profile and history views.
+- 💬 Integrated real-time chat system using Socket.IO.
+- 🔔 Audio notifications for incoming chat messages.
 
 ![image](https://github.com/user-attachments/assets/e7ccff85-cb83-43c7-9846-39cde16a3522)
 
