@@ -135,10 +135,127 @@ The ultimate goal of this project is to provide a **fast, user-friendly, and AI-
 
 ---
 
-## 🎯 Conclusion
+## Conclusion
 
 This project integrates **deep learning, medical imaging, web technologies, real-time communication, and data security** into a single system. It demonstrates how AI can support modern healthcare by providing fast and reliable diagnostic assistance while fostering patient-doctor interaction.
 
 The platform represents a strong **prototype for clinical use** and an excellent example of interdisciplinary collaboration between software engineering, AI, and healthcare.
+
+---
+
+
+
+[TR]
+
+# COVID-19 ve Zatürre Tespiti için Yapay Zekâ Destekli Web Uygulaması
+
+## 📌 Proje Özeti
+
+Uygulama, Yapay Zekâ Derin Öğrenme modelleri ile göğüs röntgeni görüntülerinden **COVID-19** ve **zatürre** tespiti yapabilen **web tabanlı bir tanı sistemi**dir.
+
+Kullanıcılar platforma giriş yaparak X-ray görüntülerini yükleyebilir, anında hastalık tahmin sonuçlarını ve modelin güven skorlarını görebilirler. Sistem ayrıca **doktor-hasta arasında gerçek zamanlı mesajlaşma özelliği** içerir, bu sayede deneyim daha etkileşimli ve erişilebilir hale gelir.
+
+Projenin nihai hedefi, **hızlı, kullanıcı dostu ve yapay zekâ destekli bir sağlık değerlendirme platformu** sağlamaktır.
+
+## Özellikler
+
+* 🩻 **Otomatik hastalık tespiti** (COVID-19 & Zatürre) – eğitilmiş derin öğrenme modelleriyle
+* 👨‍⚕️🙋🏻‍♂️ **Rol tabanlı erişim** (doktorlar ve hastalar için)
+* 📊 **Panel** – tahmin geçmişi, sağlık özetleri ve öneriler
+* 💬 **Gerçek zamanlı doktor-hasta sohbeti** (Socket.IO tabanlı, sesli ve görsel bildirimlerle)
+* 🔐 **Veri güvenliği** – bcrypt ile şifre karma ve JWT tabanlı kimlik doğrulama
+* 🌐 **Web tabanlı arayüz** – her cihazdan erişilebilir
+
+---
+
+## 🧠 Derin Öğrenme Modelleri
+
+* İki özel model: biri **COVID-19**, diğeri **Zatürre** için
+* Göğüs röntgeni veri setleriyle **Google Colab** üzerinde eğitildi
+* **TensorFlow** ve **transfer learning** tabanlı
+* Kullanılan mimariler: **VGG16** ve **ResNet**
+* Doğrulama setlerinde **%93–96 doğruluk** elde edildi
+* Flask backend’e entegre edilerek gerçek zamanlı tahmin sağlandı
+
+---
+
+## 🏗️ Teknoloji Yığını
+
+### Frontend
+
+* React.js
+* HTML, CSS, JavaScript
+
+### Backend
+
+* Python (Flask)
+* MySQL Veritabanı
+* Socket.IO (gerçek zamanlı iletişim)
+
+### Derin Öğrenme
+
+* TensorFlow
+* Transfer Learning (VGG16, ResNet)
+* Veri ön işleme & artırma
+
+### Güvenlik
+
+* bcrypt (şifre karma)
+* JWT (JSON Web Token) kimlik doğrulama
+
+---
+
+## 📂 Sistem İş Akışı
+
+1. Kullanıcı giriş yapar (doktor veya hasta rolüyle).
+2. Hasta, göğüs röntgenini yükler.
+3. Backend, yapay zekâ modellerini çalıştırır ve tahmin + güven skoru döner.
+4. Doktorlar, hasta geçmişini görebilir, yeni tahminler atayabilir ve doğrudan iletişim kurabilir.
+5. Hastalar, geçmiş tahminlerini **tablo & grafikler** üzerinden görebilir ve sağlık önerileri alabilir.
+6. Doktor-hasta sohbeti gerçek zamanlı etkileşim sağlar.
+
+---
+
+## 📦 Kullanılan Materyaller & Araçlar
+
+* Göğüs röntgeni veri setleri (COVID-QU-Ex, Pneumonia datasets)
+* TensorFlow kütüphanesi
+* Google Colab platformu
+* VGG16 & ResNet mimarileri
+* Flask backend
+* MySQL veritabanı
+* Socket.IO (mesajlaşma)
+* React.js frontend
+
+---
+
+## 📑 Yöntemler
+
+1. Veri ön işleme & artırma
+2. Transfer learning yaklaşımı
+3. Model eğitimi & doğrulaması (COVID-19 & Zatürre)
+4. Modellerin Flask backend’e entegrasyonu
+5. Web uygulaması geliştirme (React + Flask)
+6. Gerçek zamanlı sohbet entegrasyonu
+7. Veritabanı tasarımı & yönetimi
+
+---
+
+## 🔒 Güvenlik Önlemleri
+
+* Şifreler **bcrypt** ile karma yapıldıktan sonra saklanır
+* Kimlik doğrulama **JWT token** ile yapılır
+* Farklı kullanıcı rollerine göre güvenli erişim kontrolü sağlanır
+* Tıbbi verilerin gizliliği korunur
+
+---
+
+## 🎯 Sonuç
+
+Proje, **derin öğrenme, tıbbi görüntüleme, web teknolojileri, gerçek zamanlı iletişim ve veri güvenliği**ni tek bir sistemde birleştirmektedir.
+
+Yapay zekânın modern sağlık hizmetlerini nasıl destekleyebileceğini; hızlı, güvenilir ve etkileşimli tanı desteği sunarak göstermektedir.
+
+Platform, **klinik kullanım için güçlü bir prototip** olmasının yanı sıra, yazılım mühendisliği, yapay zekâ ve sağlık alanları arasındaki disiplinler arası iş birliğine örnek teşkil etmektedir.
 
 ---
