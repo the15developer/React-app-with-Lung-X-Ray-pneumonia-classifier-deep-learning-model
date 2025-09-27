@@ -1,0 +1,355 @@
+.App {
+  text-align: center;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Full height to enable scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  
+}
+
+.App-container {
+  background-color: #c1d0f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to start so it scrolls properly */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-top: 80px; /* Prevent overlap with the fixed navbar */
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.image-div{
+  background-image: url('/pexels-pixabay-40568.jpg');
+  width: 100%; /* Makes the div as wide as the viewport */
+  height: 400px; /* Sets the height to 400px */
+  /* background-color: lightblue; */
+  background-size: cover; 
+  /* background-repeat: no-repeat; */
+  margin-bottom: -20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-container {
+  text-align: center;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  padding: 50px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  width: 100%;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.info-section {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 30px 0;
+}
+
+.info-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.info-box h3 {
+  color: #0056b3;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  font-size: 1rem;
+  color: #444;
+}
+
+#button-container {
+  display: flex;      /* Enables flexbox */
+  justify-content: center;  /* Centers buttons horizontally */
+  align-items: center; /* Aligns buttons vertically */
+  gap: 340px; /* Creates a 50px space between buttons */
+  padding: 10px; /* Optional: Adds padding inside the container */
+}
+
+.upload-button {
+  background: #0077b6;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-button:hover {
+  background: #0056b3;
+}
+
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #282c34;
+  color: white;
+  position: fixed; 
+  top: 0; 
+  width: 99%; /* Full width for better styling */
+  z-index: 1000; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-title {
+  all: unset; /* Reset all default button styling (margin, padding, etc.) */
+  font-size: 2rem; /* Size similar to h1 */
+  color: white; /* White text */
+  font-weight: bold; /* Optional: Make it bold like h1 */
+  background-color: transparent; /* Remove the background color of the button */
+  box-shadow: none; /* Remove the shadow */
+  cursor: pointer; /* Make it clickable */
+  display: inline-block; /* To make it behave like inline text, rather than a block-level button */
+  text-align: center; /* Ensure text is centered */
+}
+
+
+.login-button,
+.other-button {
+  background-color: #61dafb;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: black;
+  margin-right: 10px;
+  margin-left:10px;
+}
+
+.login-button:hover,
+.other-button:hover {
+  background-color: #21a1f1;
+}
+
+.login-form-container, .create-user-form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  color: black;
+}
+
+
+.login-form, .create-user-form h3 {
+  margin-bottom: 20px;
+}
+
+.login-form,  label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-form, .create-user-form input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-submit-button, .create-user-submit-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-user-button, .login-user-button{
+  background-color: #28a745;
+  padding: 10px 20px;
+  margin-right: 10px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Allow scrolling for forms */
+.login-form,
+.create-user-form {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+
+/* Parent section styling */
+.detection-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px;
+}
+
+/* Common styling for both sections */
+.detection-container {
+  width: 45%;
+  max-width: 500px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #0056b3;
+}
+
+/* Unique colors for differentiation */
+.pneumonia {
+  border-top: 5px solid #0077b6; /* Blue */
+}
+
+.covid {
+  border-top: 5px solid #d9534f; /* Red */
+}
+
+/* Styling for form elements */
+.file-input {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+}
+
+.submit-button {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Prediction text */
+.prediction-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Image display styling */
+.image-display-p {
+  width: 100%;
+  height: 400px;
+  border: 3px solid black;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-display-c {
+  width: 100%;
+  height: 400px;
+  border: 3px solid black;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detection-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detection-container {
+    width: 90%;
+  }
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 50, 0.1);
+  background-color: white;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+  color: #1e3a8a; /* dark blue text */
+}
+
+.custom-table thead {
+  background-color: #dbeafe; /* light blue */
+  color: #1e40af; /* darker blue */
+  font-weight: bold;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px;
+  border-bottom: 1px solid #bfdbfe; /* light blue border */
+}
+
+.custom-table tbody tr:hover {
+  background-color: #eff6ff; /* lightest blue hover */
+}
+
+.custom-table img {
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
